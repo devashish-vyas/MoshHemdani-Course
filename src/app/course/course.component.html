@@ -1,12 +1,54 @@
+String interpolation and property Binding
+
 <p>{{title}}</p>
-<p>{{getTitle()}}</p>
+<!-- StringInterpolation -->
+<img src={{imageUrl}} >
+<!-- PropertyBinding -->
+<img [src]="imageUrl">  
 
-<h1>Courses</h1>
+<!-- Property Binding works also one way Component to Dom if any changes in Component Dom will be updated but 
+any changes in Dom component will not be updated  -->
+<button class="btn btn-danger">Save</button>
+<br>
+<!-- class Binding -->
+<button class = "btn btn-primary" [class.active] = "isActive"> </button>  
 
-<p>list of courses</p>
-<ul>
+<!-- StyleBinding -->   
+<p [style.backgroundColor] = "isActive ? 'red' : 'blue' "></p>
 
-<li *ngFor = "let course of courses">
-    {{course}}
-</li>
-</ul>
+<!-- EventBinding -->
+
+<button (click) = "onClick($event)"> ClickMe</button>
+
+<!-- EventBubbling -->
+
+<div (click) = "onDivClick()">
+    <button (click) = "onClick($event)"> DemoEventBubbling</button>
+</div>
+
+<!-- To trigger an event when enter was pressed  -->
+<input (keyup.enter)="onKeyUp($event)">
+
+<br>
+<br>
+
+<!-- to get the typed thing in input box -->
+<input (keyup.enter)="onKeyUp2($event)">
+
+<br>
+<br>
+<br>
+
+
+<!-- twoWayBinding dom to component and component to dom -->
+
+<input [(ngModel)] = "email" (keyup.enter) = "demoTwoWayBinding()">
+
+
+
+<!-- Pipes -->
+
+<p>{{course.title | uppercase}}</p>
+<p>{{course.rating | number}}</p>
+
+<p>{{summ | summary}}</p>
