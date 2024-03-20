@@ -1,0 +1,9 @@
+<p>favourite works!</p>
+<br>
+<br>
+<span [class]="(flag) ? 'glyphicon-star' : 'glyphicon'" (click) = "onClick()"></span>
+
+<button class = "btn" 
+[class.btn-primary] = "flag"
+[class.btn-danger] = "!flag"
+(click) = "onClick()"> Toggle Button</button>
