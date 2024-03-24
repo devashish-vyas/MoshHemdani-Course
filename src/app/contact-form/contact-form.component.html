@@ -1,0 +1,46 @@
+<form #f="ngForm" (ngSubmit) = "onSubmit(f)">  
+    <!-- Whenever user clicks on the label th einput field automatically gets focus -->
+  <div ngModelGroup="contact">
+    <!-- if you need to create complex objects you can group the input type  -->
+    <div class="form-group">
+        <label for="firstName">FirstName</label>  
+        <!-- when we put ngModel directive to a input field angular automatically creates a instance of formControl class 
+        and associate it to this input field  -->
+        <input required minlength="3" maxlength="10"  ngModel name = "firstName" #firstName="ngModel" (change) = "log(firstName)" id="firstName" type="text" class ="form-control">
+        <div class = "alert alert-danger" *ngIf = "firstName.touched && !firstName.valid">First Name is required</div>
+        <div class = "alert alert-danger" *ngIf = "firstName?.errors?.['minlength']">Name is too short</div>
+    </div>
+
+
+  </div>
+
+    <div class="form-group">
+        <label for="comment">Comment</label>  
+        <textarea required id="comment" cols="30" rows="10"  type="text" class ="form-control" ngModel name="comment"></textarea>
+    </div>
+    <br>
+    <div class="checkbox">
+        <label for="isSameMailingAddress">
+            <input type="checkbox" ngModel name="isSameMailingAddress"> isSameMailingAddress
+        </label>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="contactMethod">
+            <select ngModel name="contactMethod" id="contactMethod">
+                <option *ngFor="let x of contactMethod" [value]="x.id">{{x.value}}</option>
+            </select>
+        </label>
+    </div>
+    <br>
+    <button class="btn btn-primary" [disabled] = "!f.valid">Submit</button>
+    
+    
+    
+</form>
+
+<!-- Template Scoped -->
+<p>{{f.value | json}}</p>
+
+
+    

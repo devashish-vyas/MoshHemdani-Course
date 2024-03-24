@@ -6,13 +6,16 @@ import { FavouriteComponent } from './favourite/favourite.component';
 import { PanelComponent } from './panel/panel.component';
 import { InputFormatDirectiveDirective } from './input-format-directive.directive';
 import { ZippyComponent } from './zippy/zippy.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { FormAssignmentComponent } from './form-assignment/form-assignment.component';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,CourseComponent,FavouriteComponent,PanelComponent,InputFormatDirectiveDirective,ZippyComponent],
+  imports: [CommonModule, RouterOutlet,CourseComponent,FavouriteComponent,PanelComponent,InputFormatDirectiveDirective,ZippyComponent,ContactFormComponent,
+  FormAssignmentComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
