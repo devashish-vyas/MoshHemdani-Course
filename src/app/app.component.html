@@ -1,10 +1,55 @@
 <!-- We cannot use propterty Binding here -->
 <!-- <favourite [flag]="post.flag" (change)="onFavouriteChange($event)"></favourite> -->
 
-<app-panel>
+<!-- <app-panel>
     <ng-container class ="heading">Heading</ng-container>
     <div class="body">
         <h2>Body</h2>
         <p>This is the use of ng-content</p>
     </div>
-</app-panel>
+</app-panel> -->
+
+<!-- *ngIf do changes in DOM as it will eliminate the div completely while if use hidden propert then it will keep the div 
+and just hide it  -->
+
+<!-- <div *ngif = "courses.length>0" >
+    {{courses}}
+</div>
+
+<div *ngif = "courses.length == 0">
+    No Courses Available
+</div> -->
+
+<!-- <div [ngSwitch] = "view">
+
+    <div *ngSwitchCase = "'map'"> Map Case</div>
+    <div *ngSwitchCase = "'list'">List Case</div> 
+    <div *ngSwitchDefault>Otherwise</div>
+
+</div>
+
+
+<div>Class Binding Demonstration</div>
+<div [class] = "property" (click) = "flip()">Danger</div>
+<div [class] = "property" (click) = "flip()">Safe</div> -->
+
+<!-- <ul>
+    <li *ngFor = "let course of courses; index as i">
+        {{i}}--{{course.name}}
+    </li>
+</ul> -->
+
+<!-- ngClass is a attribute directive  -->
+<!-- <div [ngClass] = "{
+    'class1' : flag,
+    'class2' : !flag
+}">ngClassTutorial</div> -->
+
+<!-- <h3>Hello Welcome to my page</h3>
+
+<input type="text" appInputFormatDirective> -->
+
+
+
+
+<zippy></zippy>
