@@ -1,0 +1,34 @@
+<!-- in Reactive Forms we will create this formControl object reactively -->
+
+<!-- With the help of this we associate it to the FormGroup object create in typescript file -->
+<form [formGroup]="form"> 
+
+    <div formGroupName="account">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+                formControlName="username"
+                id="username" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="username.touched && username?.errors?.['required']" class="alert alert-danger">Username Required </div>
+            <div *ngIf="username?.errors?.['minlength']" class="alert alert-danger">Username should be of 3 characters long</div>
+            <div *ngIf="username?.errors?.['cannotContainSpace']" class="alert alert-danger">UserName should not contain space</div>
+            <div *ngIf="username?.errors?.['userNameNotUnique']" class="alert alert-danger">Name already exists in Database</div>    
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                formControlName="password"
+                id="password" 
+                type="text" 
+                class="form-control">
+        </div>
+
+    </div>
+   
+   
+    <br>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>

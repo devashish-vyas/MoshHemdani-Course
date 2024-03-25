@@ -8,6 +8,10 @@ import { InputFormatDirectiveDirective } from './input-format-directive.directiv
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormAssignmentComponent } from './form-assignment/form-assignment.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormArrayComponent } from './form-array/form-array.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 
@@ -15,7 +19,8 @@ import { FormAssignmentComponent } from './form-assignment/form-assignment.compo
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet,CourseComponent,FavouriteComponent,PanelComponent,InputFormatDirectiveDirective,ZippyComponent,ContactFormComponent,
-  FormAssignmentComponent],
+  FormAssignmentComponent, SignupFormComponent, ReactiveFormsModule,FormsModule,FormArrayComponent,
+  ChangePasswordComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

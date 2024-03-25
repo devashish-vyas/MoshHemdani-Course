@@ -1,0 +1,9 @@
+<form >
+    <label for="courses">Add Courses</label>
+    <input name = "courses" type="text" class="form-control" (keydown.enter)="add($event,topic)" #topic>
+    <ul class="list-group">
+        <li class = "list-group-item" 
+        *ngFor = "let topic of topics" (click) = "delete(topic)">{{topic}}
+        </li>
+    </ul>
+</form>
